@@ -9,8 +9,7 @@ Student::Student()
 }
 
 Student::Student(const char* n, const char* name1, int age1) :Person(name1, age1)
-{ 
-
+{
 	Academy = new char[strlen(n) + 1];
 	strcpy_s(Academy, strlen(n) + 1, n);
 }
@@ -32,6 +31,7 @@ Student& Student::operator=(const Student& obj)
 	Academy = new char[strlen(obj.Academy) + 1];
 	strcpy_s(Academy, strlen(obj.Academy) + 1, obj.Academy);
 
+	if (name != nullptr) delete[]name;
 	name = new char[strlen(obj.name) + 1];
 	strcpy_s(name, strlen(obj.name) + 1, obj.name);
 

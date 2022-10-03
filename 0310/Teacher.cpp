@@ -33,7 +33,7 @@ Teacher& Teacher::operator=(const Teacher& obj)
 	School = new char[strlen(obj.School) + 1];
 	strcpy_s(School, strlen(obj.School) + 1, obj.School);
 
-
+	if (name != nullptr) delete[]name;
 	name = new char[strlen(obj.name) + 1];
 	strcpy_s(name, strlen(obj.name) + 1, obj.name);
 
